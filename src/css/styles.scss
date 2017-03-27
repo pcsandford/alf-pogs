@@ -6,11 +6,15 @@
 main {
   font-family: $fontFamily;
   color:$black;
+  }
+
+  //Intro
+  .intro {
   width:100%;
   background-image:url("../images/website-background.png");
   height:100vh;
   background-size:cover;
-  background-position:center;
+  background-position:center 100%;
   padding:40px 0 0 100px;
 
   h1, h2, p, a {
@@ -47,8 +51,75 @@ main {
       }
 
       li a:hover {
-        background-color:$lime;
+        background:$lime;
+      }
+
+      li a:focus {
+        outline:none;
+        background:$lime;
       }
     }
   }
 }
+
+//Work
+.work {
+  padding:40px 0 40px 100px;
+}
+
+//Contact
+.contact {
+  padding:40px 0 40px 100px;
+}
+
+input, button , label{
+  display:block;
+}
+
+textarea, .input--text {
+  max-width:300px;
+  width:100%;
+  margin-bottom:20px;
+  border:2px solid $black;
+  // background:$pink;
+}
+
+textarea:focus, .input--text:focus {
+  outline:2px solid $lime;
+}
+
+button {
+  clear:both;
+  text-decoration:underline;
+  color:$black;
+  background:white;
+  border:none;
+  position: relative;
+}
+
+button::after {
+  content:"💌";
+  position: absolute;
+  right:-30px;
+  top:-4px;
+  font-size:24px;
+}
+button:focus {
+  outline: none;
+  background:$lime;
+}
+
+button:focus:after {
+  content:"✈️";
+  outline:none;
+  background:none;
+}
+
+button:hover {
+  background:$lime;
+}
+
+button:hover:after{
+  content:"✈️";
+}
+
