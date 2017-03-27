@@ -1,116 +1,54 @@
+//get the stuff to reset etc.
 @import "reset";
-
-/* VARIABLES */
-
-/* Colours */
-$white: #FFF;
-$black: #333;
-$background: #360098;
-$bright: #FF00CB;
-$windowsBlue: #000080;
-$windowsGrey: #C0C0C0;
-
-/* Fonts */
-
-/* PX_SANS_NOUVEAUX */
-@font-face {
-  font-family: "px_sans";
-  src: url('../../fonts/px_sans_nouveaux.ttf')  format('truetype');
-}
-
-$font-family: "px_sans", "VT323", monospace;
-$base-size: 14px;
-
-
-
-body {
-  width:100vw;
-  height:100vh;
-  background-color:$background;
-  background-image: linear-gradient($bright 10px, transparent 2px),
-  linear-gradient(90deg, $bright 10px, transparent 2px);
-  background-size:60px 70px;
-  color:$white;
-  font-size:$base-size;
-  font-family:$font-family;
-}
-
-header {
-  width:100%;
-  background-color: $windowsBlue;
-  padding:10px 40px;
-  position: relative;
-  z-index:100;
-}
+//and get the mixins
+@import "mixins";
 
 main {
-  display:flex;
-  justify-content:center;
-  align-items:center;
-}
+  font-family: $fontFamily;
+  color:$black;
+  width:100%;
+  background-image:url("../images/website-background.png");
+  height:100vh;
+  background-size:cover;
+  background-position:center;
+  padding:40px 0 0 100px;
 
-//cube
-#holder {
-  margin:140px auto;
-  perspective:1000px;
-}
+  h1, h2, p, a {
+    font-weight:300;
+    margin: 0;
+    background-color:$white;
+    padding:5px 10px;
+  }
 
-.cube {
-  position: relative;
-  margin: 0 auto;
-  height: 300px;
-  width: 300px;
-  animation: spin 20s infinite linear;
-  transform-style: preserve-3d;
-}
+  h1, h2 {
+    float:left;
+    margin-bottom:20px;
+  }
 
-.cube div {
-  position: absolute;
-  height: 300px;
-  width: 300px;
-  box-shadow: 0px 0px 1px rgba(0, 0, 0, 0.5);
-  animation:rotate 15s infinite linear;
-  opacity:0.2;
-}
+  h2 {
+    clear:both;
+  }
 
-.cube div.side1 {
-  background: linear-gradient($bright 10px, transparent 2px),
-  linear-gradient(90deg, $bright 10px, transparent 2px);
-  background-size:30px 30px;
-  transform:translateZ(150px);
-}
-.cube div.side2 {
-  background-image: linear-gradient($bright 10px, transparent 2px),
-  linear-gradient(90deg, $bright 10px, transparent 2px);
-  background-size:30px 30px;
-  transform:rotateY(90deg) translateZ(150px);
-}
-.cube div.side3 {
-  background-image: linear-gradient($bright 10px, transparent 2px),
-  linear-gradient(90deg, $bright 10px, transparent 2px);
-  background-size:30px 30px;
-  transform:rotateY(180deg) translateZ(150px);
-}
-.cube div.side4 {
-  background-image: linear-gradient($bright 10px, transparent 2px),
-  linear-gradient(90deg, $bright 10px, transparent 2px);
-  background-size:30px 30px;
-  transform:rotateY(-90deg) translateZ(150px);
-}
-.cube div.side5 {
-  background-image: linear-gradient($bright 10px, transparent 2px),
-  linear-gradient(90deg, $bright 10px, transparent 2px);
-  background-size:30px 30px;
-  transform:rotateX(-90deg) translateZ(150px) rotate(180deg);
-}
-.cube div.side6  {
-  background-image: linear-gradient($bright 10px, transparent 2px),
-  linear-gradient(90deg, $bright 10px, transparent 2px);
-  background-size:30px 30px;
-  transform:rotateX(90deg) translateZ(150px);
-}
+  nav {
+    clear:both;
 
-@keyframes spin {
-  0% {transform: rotateX(0deg) rotateY(0deg);}
-  100% {transform: rotateX(1080deg) rotateY(360deg);}
+    ul {
+      list-style:none;
+      padding: 0;
+
+      li {
+        float:left;
+        margin-right:20px;
+      }
+
+      li a {
+        color:$black;
+        width:100%;
+      }
+
+      li a:hover {
+        background-color:$lime;
+      }
+    }
+  }
 }
