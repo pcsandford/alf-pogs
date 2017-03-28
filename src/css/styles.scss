@@ -64,12 +64,70 @@ main {
 
 //Work
 .work {
-  padding:40px 0 40px 100px;
+  padding:40px 0 20px 100px;
+  background-size:4px;
+  background-image:linear-gradient(90deg, black 2px, $lime 2px);
+
+  .wrapper--work {
+    max-width:1000px;
+  }
+
+  h2 {
+    font-weight:300;
+    margin: 0;
+    background-color:$black;
+    color:$white;
+    padding:5px 10px;
+    display:inline-block;
+  }
+
+  ul {
+      list-style:none;
+      padding: 0;
+      margin:20px 0 0 0;
+      display:flex;
+      flex-wrap:wrap;
+      justify-content:flex-start;
+
+      li {
+        margin:0 20px 20px 0;
+        flex:0 0 auto;
+      }
+
+      li a {
+        background-color:$black;
+        color:$white;
+        width:100%;
+        padding:5px 10px;
+      }
+
+      li a:hover {
+        background:$lime;
+        color:$black;
+      }
+
+      li a:focus {
+        outline:none;
+        background:$lime;
+        color:$black;
+      }
+    }
 }
 
 //Contact
 .contact {
   padding:40px 0 40px 100px;
+  // background-size:8px;
+  // background-image:linear-gradient(90deg, black 2px, $pink 2px);
+
+  h2 {
+    font-weight:300;
+    margin: 0 0 20px 0;
+    background-color:$black;
+    color:$white;
+    padding:5px 10px;
+    display:inline-block;
+  }
 }
 
 input, button , label{
@@ -81,11 +139,12 @@ textarea, .input--text {
   width:100%;
   margin-bottom:20px;
   border:2px solid $black;
-  // background:$pink;
+  background:black;
 }
 
 textarea:focus, .input--text:focus {
   outline:2px solid $lime;
+  background:white;
 }
 
 button {
