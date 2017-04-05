@@ -10,6 +10,8 @@
   <!-- Fonts -->
   <link href="https://fonts.googleapis.com/css?family=Overpass+Mono:400,700" rel="stylesheet">
 
+  <!-- <script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script> -->
+
 </head>
 <body>
 
@@ -19,16 +21,31 @@
       <h2>Designer / Developer</h2>
       <nav>
         <ul>
-          <li><a href="">Work</a></li>
-          <li><a href="">Contact</a></li>
-          <li><a href="">Twitter</a></li>
+          <li><a href="#work">Work</a></li>
+          <li><a href="#contact">Contact</a></li>
+          <li><a href="https://twitter.com/share" target="_blank" class="twitter-share-button" data-text="your website is whack @cameroncodes" data-via="cameroncodes" data-show-count="false">Twitter</a></li>
         </ul>
       </nav>
     </section>
-    <section class="work">
+    <section class="work" id="work">
       <!-- add work stuff here - design and dev -->
+      <div class="wrapper--work">
+        <h2>Design</h2>
+          <ul class="list--design">
+            <li><a href="">Poster: Layer Cake</a></li>
+            <li><a href="">Poster: Predator</a></li>
+            <li><a href="">Branding: Law Firm</a></li>
+          </ul>
+        <h2>Development</h2>
+          <ul class="list--development">
+            <li><a href="">Website: Pattern Arcade</a></li>
+            <li><a href="">Website: Urban Design Guerillaz</a></li>
+            <li><a href="">Website: McCloskey Law</a></li>
+          </ul>
+      </div>
     </section>
-    <section class="contact">
+    <section class="contact" id="contact">
+      <h2>Contact</h2>
       <form action="POST">
         <label for="name">Name</label>
         <input id="name" class="input--text" type="text" name="name">
