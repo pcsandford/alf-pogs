@@ -1,0 +1,17 @@
+{
+  "name": "cameroncodes",
+  "description": "",
+  "main": "index.js",
+  "authors": [
+    "Peter Sandford <peter@cameroncodes.com>"
+  ],
+  "license": "ISC",
+  "homepage": "http://www.cameroncodes.com",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
