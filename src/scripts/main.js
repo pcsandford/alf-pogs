@@ -32,7 +32,7 @@ pageChanges.changeBackground = function() {
 
 	if(currentTime >= eveningTime || currentTime <= morningTime) {
 		console.log(currentTime);
-		$(".intro").css({"background-color":"black","background-image":"black url('build/images/background-night.png')"});
+		$(".intro").css({"background-color":"black","background-image":"url('build/images/background-night.png')"});
 	} else {
 		$(".intro").css({"background-color":"white","background-image":"url('build/images/background-day.png')"});
 	}
