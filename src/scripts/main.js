@@ -1,5 +1,6 @@
 const navigation = {};
 const pageChanges = {};
+const $popup = $(".popup--container");
 
 navigation.changeInputStyle = function() {
 
@@ -13,13 +14,37 @@ navigation.changeInputStyle = function() {
 
 };
 
+navigation.showPopup = function() {
+	let image = $(this).data("image");
+	let backgroundImage = "build/images/"+image;
+
+	$popup.css({
+		"display":"block",
+		"background-image":"url("+backgroundImage+")"
+	});
+
+};
+
+navigation.closePopup = function() {
+	$popup.css("display","none");
+};
+
 navigation.init = function() {
 
-	$(".button-great").on("click", () => console.log("yasss"));
-
+	//change the input styling
 	$('input, textarea').on('keyup', function() {
-		console.log("up");
 		navigation.changeInputStyle.call($(this));
+	});
+
+	//show the popup when the button is clicked
+	$(".list--design a").on("click", function(e) {
+		e.preventDefault();
+		navigation.showPopup.call($(this));
+	});
+
+	$(".popup__button--close").on("click",function(e) {
+		e.preventDefault();
+		navigation.closePopup();
 	});
 
 };
@@ -39,11 +64,14 @@ pageChanges.changeBackground = function() {
 
 };
 
+
+
 pageChanges.init = function() {
 
 	setInterval(pageChanges.changeBackground,60000 );
 
 };
+
 
 $(function () {
 
