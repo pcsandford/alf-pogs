@@ -6,6 +6,7 @@
 main {
   font-family: $fontFamily;
   color:$black;
+  position: relative;
   }
 
   //Intro
@@ -182,5 +183,48 @@ button:hover {
 
 button:hover:after{
   content:"✈️";
+}
+
+//Popup
+
+.popup--container {
+  position: fixed;
+  top:0;
+  bottom:0;
+  left:0;
+  right:0;
+  display:none;
+  // background:$white;
+  background-repeat:no-repeat;
+  background-position:center;
+  background-size:contain;
+
+  .popup__button--close {
+    position: absolute;
+    right:50px;
+    top:20px;
+    background-color:$black;
+    color:$white;
+    padding:5px 35px 5px 10px;
+    display:inline-block;
+
+    &:after {
+      content:"❌";
+      position: absolute;
+      right:5px;
+      top:0px;
+      font-size:24px;
+    }
+
+    &:hover {
+      background:$lime;
+      color:$black;
+    }
+
+    &:hover::after {
+      content:"👋";
+      top:-2px;
+    }
+  }
 }
 
