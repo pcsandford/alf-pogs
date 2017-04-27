@@ -1,6 +1,7 @@
 const navigation = {};
 const pageChanges = {};
 const $popup = $(".popup--container");
+const $popupImage = $(".popup--container img");
 
 navigation.changeInputStyle = function() {
 
@@ -16,13 +17,10 @@ navigation.changeInputStyle = function() {
 
 navigation.showPopup = function() {
 	let image = $(this).data("image");
-	let backgroundImage = "build/images/"+image;
-
-	$popup.css({
-		"display":"block",
-		"background-image":"url("+backgroundImage+")"
-	});
-
+	let fullImage = "build/images/"+image;
+	let altText = $(this).data("alt");
+	$popupImage.attr({"src":fullImage, "alt":altText})
+	$popup.css("display","block");
 };
 
 navigation.closePopup = function() {
