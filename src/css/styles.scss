@@ -62,10 +62,10 @@ main {
   }
 }
 
-//Work
-.work {
+//Work - Design
+.work--design {
   padding:60px 0 60px 100px;
-  background-size:8px;
+  // background-size:8px;
   // background-image:linear-gradient(90deg, $lime 4px, $purple 4px);
 
   .wrapper--work {
@@ -84,13 +84,13 @@ main {
   ul {
       list-style:none;
       padding: 0;
-      margin:20px 0 0 0;
+      margin:0;
       display:flex;
       flex-wrap:wrap;
       justify-content:flex-start;
 
       li {
-        margin:0 20px 0 0;
+        margin:20px 20px 0 0;
         flex:0 0 auto;
       }
 
@@ -112,9 +112,57 @@ main {
         color:$black;
       }
     }
-  ul:first-of-type {
-    margin-bottom:60px;
+}
+
+.work--development {
+  padding:0 0 60px 100px;
+  // background-size:8px;
+  // background-image:linear-gradient(90deg, $lime 4px, $purple 4px);
+
+  .wrapper--work {
+    max-width:1200px;
   }
+
+  h2 {
+    font-weight:300;
+    margin: 0;
+    background-color:$black;
+    color:$white;
+    padding:5px 10px;
+    display:inline-block;
+  }
+
+  ul {
+      list-style:none;
+      padding: 0;
+      margin:0;
+      display:flex;
+      flex-wrap:wrap;
+      justify-content:flex-start;
+
+      li {
+        margin:20px 20px 0 0;
+        flex:0 0 auto;
+      }
+
+      li a {
+        background-color:$black;
+        color:$white;
+        width:100%;
+        padding:5px 10px;
+      }
+
+      li a:hover {
+        background:$lime;
+        color:$black;
+      }
+
+      li a:focus {
+        outline:none;
+        background:$lime;
+        color:$black;
+      }
+    }
 }
 
 //Contact
