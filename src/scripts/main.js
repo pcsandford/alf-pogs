@@ -1,7 +1,6 @@
-const navigation = {};
-const pageChanges = {};
-const $popup = $(".popup--container");
-const $popupImage = $(".popup--container img");
+const navigation = {}, pageChanges = {}, $popup = $(".popup--container"), $popupImage = $(".popup--container img"), $emailPopup = $(".popup--container--email");
+
+const colorChoices = ["#03FD06", "#ED058F", "EA0FEA"];
 
 navigation.changeInputStyle = function() {
 
@@ -19,7 +18,7 @@ navigation.showPopup = function() {
 	let image = $(this).data("image");
 	let fullImage = "build/images/"+image;
 	let altText = $(this).data("alt");
-	$popupImage.attr({"src":fullImage, "alt":altText})
+	$popupImage.attr({"src":fullImage, "alt":altText});
 	$popup.css("display","block");
 };
 
@@ -27,10 +26,28 @@ navigation.closePopup = function() {
 	$popup.css("display","none");
 };
 
+navigation.showEmailPopup = function() {
+	$emailPopup.css("display","block");
+};
+
+navigation.clearEmailFields = function() {
+	let $name = $(".input--name");
+	let $email = $(".input--email");
+	let $message =$(".input--message");
+	$name.val("").removeClass("filled");;
+	$email.val("").removeClass("filled");;
+	$message.val("").removeClass("filled");;
+};
+
+navigation.closeEmailPopup = function() {
+	$emailPopup.css("display","none");
+	navigation.clearEmailFields();
+};
+
 navigation.init = function() {
 
 	//change the input styling
-	$('input, textarea').on('keyup', function() {
+	$("input, textarea").on("keyup", function() {
 		navigation.changeInputStyle.call($(this));
 	});
 
@@ -45,6 +62,11 @@ navigation.init = function() {
 		navigation.closePopup();
 	});
 
+	$(".popup--email__button--close").on("click",function(e) {
+		e.preventDefault();
+		navigation.closeEmailPopup();
+	});
+
 };
 
 pageChanges.changeBackground = function() {
@@ -54,19 +76,36 @@ pageChanges.changeBackground = function() {
 	let morningTime = 600;
 
 	if(currentTime >= eveningTime || currentTime <= morningTime) {
-		console.log(currentTime);
 		$(".intro").css({"background-color":"black","background-image":"url('build/images/background-night.png')"});
 	} else {
 		$(".intro").css({"background-color":"white","background-image":"url('build/images/background-day.png')"});
 	}
-
 };
 
+// pageChanges.changeHoverColour = function() {
+// 	function getRandomArbitrary(min, max) {
+// 	  return Math.floor(Math.random() * (max - min)) + min;
+// 	}
+// 	let randomNum = getRandomArbitrary(0,2);
+// 	$(this).find("a").css("background",colorChoices[randomNum]);
+// };
+
+// pageChanges.removeHoverColour = function() {
+// 	$(this).find("a").css("background","black");
+// }
 
 
 pageChanges.init = function() {
 
 	setInterval(pageChanges.changeBackground,60000 );
+
+	// $("li").on("mouseenter", function() {
+	// 	pageChanges.changeHoverColour.call($(this));
+	// });
+
+	// $("li").on("mouseout", function() {
+	// 	pageChanges.removeHoverColour.call($(this));
+	// });
 
 };
 
@@ -76,4 +115,19 @@ $(function () {
   navigation.init();
   pageChanges.init();
   pageChanges.changeBackground();
+  // pageChanges.changeHoverColour();
+
+  var message = "";
+
+  $("#contact-form__submit").on("click", function() {
+      message = $("#contact-form").serialize();
+      $.ajax({
+          url: "https://formspree.io/peter@cameroncodes.com",
+          method: "POST",
+          data: {message: message},
+          dataType: "json"
+      });
+      navigation.showEmailPopup();
+      return false;
+  });
 });

@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Peter! 😝</title>
+  <title>Cameron Codes</title>
 
   <!-- Stylesheets -->
   <link rel="stylesheet" href="build/css/styles.min.css">
@@ -11,6 +11,7 @@
   <link href="https://fonts.googleapis.com/css?family=Overpass+Mono:400,700" rel="stylesheet">
 
   <!-- <script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script> -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 </head>
 <body>
@@ -47,22 +48,33 @@
       </div>
     </section>
     <section class="contact" id="contact">
-      <h2>Contact</h2>
-      <form action="POST">
+      <h2>Be Nice And Say Hello</h2>
+      <form id="contact-form" action="POST">
         <label for="name">Name</label>
-        <input id="name" class="input--text" type="text" name="name">
+        <input id="name" class="input--text input--name" type="text" name="name">
         <label for="email">Email</label>
-        <input class="input--text" type="text" name="email">
+        <input class="input--text input--email" type="text" name="email">
         <label for="message">What's up?</label>
-        <textarea class="input--text" rows="4" cols="50" name="message"></textarea>
-        <button type="submit">Send it over</button>
+        <textarea class="input--text input--message" rows="4" cols="50" name="message"></textarea>
+        <button id="contact-form__submit" type="submit">Send it over</button>
       </form>
     </section>
+    <footer>
+      <p> &copy;Peter Cameron 2017</p>
+    </footer>
+    <!--popup sections-->
     <section class="popup--container">
       <div class="popup--container__inner">
         <img src="" alt="">
       </div>
       <a href="#" class="popup__button--close">Close</a>
+    </section>
+    <section class="popup--container--email">
+      <div class="popup--container--email__inner">
+        <p>Thank you!</p>
+        <p>I'll get back to you very soon.</p>
+      </div>
+      <a href="#" class="popup--email__button--close">Back</a>
     </section>
   </main>
 
