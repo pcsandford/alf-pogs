@@ -15,6 +15,7 @@ main {
   height:100vh;
   background-size:cover;
   background-position:center 100%;
+  background-repeat:no-repeat;
   padding:60px 0 0 100px;
 
   h1, h2, p, a {
@@ -368,3 +369,4 @@ footer {
   }
 }
 
+@import "media-queries";
