@@ -191,6 +191,10 @@ textarea, .input--text {
   border:2px solid $black;
   background:$black;
   padding-left:10px;
+
+  //remove default border radius on iphone
+  -webkit-appearance: none;
+  border-radius:0;
 }
 
 textarea:focus, .input--text:focus {
