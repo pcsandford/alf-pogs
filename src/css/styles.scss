@@ -216,7 +216,7 @@ button {
 }
 
 button::after {
-  content:"💌";
+  content:"📭";
   position: absolute;
   right:-30px;
   top:-4px;
@@ -228,7 +228,7 @@ button:focus {
 }
 
 button:focus:after {
-  content:"✈️";
+  content:"📬";
   outline:none;
   background:none;
 }
@@ -238,7 +238,7 @@ button:hover {
 }
 
 button:hover:after{
-  content:"✈️";
+  content:"📬";
 }
 
 //Footer
